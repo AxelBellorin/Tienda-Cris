@@ -47,29 +47,30 @@ namespace TRCAplicacion.GUI.MenuReportes
 
         public void productoBajoStock()
         {
+            //Se instancia la clase random para generar RGB aleatorio
+            Random r = new Random();
+
             objReportesControllers = new ReportesControllers();
+
             //Recuperamos los datos
             dt = objReportesControllers.ejecutarConsulta("select p.\"Codigo_Producto\",p.\"Stock\" from venta.\"Producto\" p order by p.\"Stock\" limit 10;");
-
-            //Se eliminan todas las series del gráficos
-            //chartProductoBajoStock.Series.Clear();
 
             //Se añade un titulo al gráfico
             chartProductoBajoStock.Titles.Add("Productos con bajo stock");
 
             for (int i = 0; i < dt.Rows.Count; i++)
             {
-                ////Añadimos una serie al gráfico
-                //chartProductoBajoStock.Series.Add(dt.Rows[i][0].ToString());
-
-                
-                //Añadimos el valor de la comlumna en la posicion Y del gráfico
+                //Añadimos un punto de la serio en el gráfico y se le pasa los valores X y Y
                 chartProductoBajoStock.Series[0].Points.AddXY(dt.Rows[i][0].ToString(), dt.Rows[i][1].ToString());
 
-                //añadimos el nombre de la columna en la posicion X del gráfico
-                chartProductoBajoStock.Series[0].Label = dt.Rows[i][1].ToString();
+                //Añadimos un label de la cantidad de stock en cada columna(punto).
+                chartProductoBajoStock.Series[0].Points[i].Label = dt.Rows[i][1].ToString();
+            }
 
-                chartProductoBajoStock.Series[0]["PointWidth"] = "0.5";
+            //Se le agrega un color random para cada columna(punto).
+            for (int i = 0; i < chartProductoBajoStock.Series[0].Points.Count; i++)
+            {
+                chartProductoBajoStock.Series[0].Points[i].Color = Color.FromArgb(r.Next(0, 255), r.Next(0, 255), r.Next(0, 255));
             }
         }
     }

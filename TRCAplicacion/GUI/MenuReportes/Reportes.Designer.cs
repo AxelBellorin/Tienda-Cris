@@ -30,7 +30,6 @@ namespace TRCAplicacion.GUI.MenuReportes
         private void InitializeComponent()
         {
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.chartProductoBajoStock = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
@@ -46,21 +45,22 @@ namespace TRCAplicacion.GUI.MenuReportes
             this.chartProductoBajoStock.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.chartProductoBajoStock.BackColor = System.Drawing.Color.Silver;
             chartArea1.AxisX.IntervalAutoMode = System.Windows.Forms.DataVisualization.Charting.IntervalAutoMode.VariableCount;
+            chartArea1.AxisX.MajorGrid.Enabled = false;
+            chartArea1.AxisY.MajorGrid.Enabled = false;
+            chartArea1.BackColor = System.Drawing.Color.Silver;
             chartArea1.Name = "ChartArea1";
             this.chartProductoBajoStock.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.chartProductoBajoStock.Legends.Add(legend1);
-            this.chartProductoBajoStock.Location = new System.Drawing.Point(28, 12);
+            this.chartProductoBajoStock.Location = new System.Drawing.Point(12, 12);
             this.chartProductoBajoStock.Name = "chartProductoBajoStock";
-            this.chartProductoBajoStock.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Berry;
+            this.chartProductoBajoStock.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.None;
             series1.ChartArea = "ChartArea1";
-            series1.Legend = "Legend1";
             series1.Name = "Series1";
+            series1.YValuesPerPoint = 2;
             this.chartProductoBajoStock.Series.Add(series1);
             this.chartProductoBajoStock.Size = new System.Drawing.Size(400, 197);
             this.chartProductoBajoStock.TabIndex = 0;
-            this.chartProductoBajoStock.Text = "chart1";
             // 
             // statusStrip1
             // 
