@@ -1,0 +1,401 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{5EC2522B-3707-41BA-9463-E80A2AE8CC8E}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>TRCAplicacion</RootNamespace>
+    <AssemblyName>TRCAplicacion</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=1.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.1.1.0\lib\net461\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="Npgsql, Version=5.0.13.0, Culture=neutral, PublicKeyToken=5d8b90d52f46fda7, processorArchitecture=MSIL">
+      <HintPath>..\packages\Npgsql.5.0.13\lib\netstandard2.0\Npgsql.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.5.0\lib\netstandard2.0\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Core" />
+    <Reference Include="System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.5.3\lib\netstandard2.0\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.5.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.4.6.0\lib\netstandard2.0\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Text.Encodings.Web, Version=4.0.4.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Text.Encodings.Web.4.6.0\lib\netstandard2.0\System.Text.Encodings.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Text.Json, Version=4.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Text.Json.4.6.0\lib\net461\System.Text.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Channels, Version=4.0.2.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Threading.Channels.4.7.0\lib\netstandard2.0\System.Threading.Channels.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Threading.Tasks.Extensions.4.5.3\lib\netstandard2.0\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.5.0\lib\net47\System.ValueTuple.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Controllers\Cargo\CargoC.cs" />
+    <Compile Include="Controllers\Cargo\CargoController.cs" />
+    <Compile Include="Controllers\Categoria\CategoriaC.cs" />
+    <Compile Include="Controllers\Categoria\CategoriaController.cs" />
+    <Compile Include="Controllers\Cliente\ClienteC.cs" />
+    <Compile Include="Controllers\Cliente\ClienteController.cs" />
+    <Compile Include="Controllers\CompraProveedor\CompraProveedorC.cs" />
+    <Compile Include="Controllers\CompraProveedor\CompraProveedorController.cs" />
+    <Compile Include="Controllers\EncargoCliente\EncargoClienteC.cs" />
+    <Compile Include="Controllers\EncargoCliente\EncargoClienteController.cs" />
+    <Compile Include="Controllers\EstadoEncargo\EstadoEncargoC.cs" />
+    <Compile Include="Controllers\EstadoEncargo\EstadoEncargoController.cs" />
+    <Compile Include="Controllers\Login\LoginC.cs" />
+    <Compile Include="Controllers\Login\LoginController.cs" />
+    <Compile Include="Controllers\Marca\MarcaC.cs" />
+    <Compile Include="Controllers\Marca\MarcaController.cs" />
+    <Compile Include="Controllers\PedidoCliente\PedidoClienteC.cs" />
+    <Compile Include="Controllers\PedidoCliente\PedidoClienteController.cs" />
+    <Compile Include="Controllers\Productos\ProductosC.cs" />
+    <Compile Include="Controllers\Productos\ProductosController.cs" />
+    <Compile Include="Controllers\Producto\ProductoC.cs" />
+    <Compile Include="Controllers\Producto\ProductoController.cs" />
+    <Compile Include="Controllers\Proveedor\ProveedorC.cs" />
+    <Compile Include="Controllers\Proveedor\ProveedorController.cs" />
+    <Compile Include="Controllers\PuntoReunion\DepartamentoC.cs" />
+    <Compile Include="Controllers\PuntoReunion\DepartamentoController.cs" />
+    <Compile Include="Controllers\PuntoReunion\MunicipioC.cs" />
+    <Compile Include="Controllers\PuntoReunion\MunicipioController.cs" />
+    <Compile Include="Controllers\PuntoReunion\PaisC.cs" />
+    <Compile Include="Controllers\PuntoReunion\PaisController.cs" />
+    <Compile Include="Controllers\PuntoReunion\PuntoReunionC.cs" />
+    <Compile Include="Controllers\PuntoReunion\PuntoReunionController.cs" />
+    <Compile Include="Controllers\Reportes\ReportesControllers.cs" />
+    <Compile Include="Controllers\Talla\TallaC.cs" />
+    <Compile Include="Controllers\Talla\TallaController.cs" />
+    <Compile Include="Controllers\TipoPago\TipoPagoC.cs" />
+    <Compile Include="Controllers\TipoPago\TipoPagoController.cs" />
+    <Compile Include="Controllers\Trabajador\TrabajadorC.cs" />
+    <Compile Include="Controllers\Trabajador\TrabajadorController.cs" />
+    <Compile Include="GUI\Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\MDITienda.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\MDITienda.Designer.cs">
+      <DependentUpon>MDITienda.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\MenuCatalogos\Otros\SubmenuCargo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\MenuCatalogos\Otros\SubmenuCargo.Designer.cs">
+      <DependentUpon>SubmenuCargo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\MenuCatalogos\Otros\SubmenuCategoria.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\MenuCatalogos\Otros\SubmenuCategoria.Designer.cs">
+      <DependentUpon>SubmenuCategoria.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\MenuCatalogos\Otros\SubmenuMarca.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\MenuCatalogos\Otros\SubmenuMarca.Designer.cs">
+      <DependentUpon>SubmenuMarca.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\MenuCatalogos\Otros\SubmenuPuntoReunion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\MenuCatalogos\Otros\SubmenuPuntoReunion.Designer.cs">
+      <DependentUpon>SubmenuPuntoReunion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\MenuCatalogos\Otros\SubmenuTalla.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\MenuCatalogos\Otros\SubmenuTalla.Designer.cs">
+      <DependentUpon>SubmenuTalla.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\MenuCatalogos\SubmenuCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\MenuCatalogos\SubmenuCliente.Designer.cs">
+      <DependentUpon>SubmenuCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\MenuCatalogos\SubmenuProducto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\MenuCatalogos\SubmenuProducto.Designer.cs">
+      <DependentUpon>SubmenuProducto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\MenuCatalogos\SubmenuProveedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\MenuCatalogos\SubmenuProveedor.Designer.cs">
+      <DependentUpon>SubmenuProveedor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\MenuCatalogos\SubmenuTrabajador.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\MenuCatalogos\SubmenuTrabajador.Designer.cs">
+      <DependentUpon>SubmenuTrabajador.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\MenuOperaciones\Otros\SubmenuEstadoEncargo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\MenuOperaciones\Otros\SubmenuEstadoEncargo.Designer.cs">
+      <DependentUpon>SubmenuEstadoEncargo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\MenuOperaciones\Otros\SubmenuProductos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\MenuOperaciones\Otros\SubmenuProductos.Designer.cs">
+      <DependentUpon>SubmenuProductos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\MenuOperaciones\Otros\SubmenuTipoPago.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\MenuOperaciones\Otros\SubmenuTipoPago.Designer.cs">
+      <DependentUpon>SubmenuTipoPago.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\MenuOperaciones\SubmenuCompraProveedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\MenuOperaciones\SubmenuCompraProveedor.Designer.cs">
+      <DependentUpon>SubmenuCompraProveedor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\MenuOperaciones\SubmenuEncargoCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\MenuOperaciones\SubmenuEncargoCliente.Designer.cs">
+      <DependentUpon>SubmenuEncargoCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\MenuOperaciones\SubmenuPedidoCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\MenuOperaciones\SubmenuPedidoCliente.Designer.cs">
+      <DependentUpon>SubmenuPedidoCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\MenuReportes\Reportes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\MenuReportes\Reportes.Designer.cs">
+      <DependentUpon>Reportes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ConexionModel.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="GUI\Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\MDITienda.resx">
+      <DependentUpon>MDITienda.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\MenuCatalogos\Otros\SubmenuCargo.resx">
+      <DependentUpon>SubmenuCargo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\MenuCatalogos\Otros\SubmenuCategoria.resx">
+      <DependentUpon>SubmenuCategoria.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\MenuCatalogos\Otros\SubmenuMarca.resx">
+      <DependentUpon>SubmenuMarca.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\MenuCatalogos\Otros\SubmenuPuntoReunion.resx">
+      <DependentUpon>SubmenuPuntoReunion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\MenuCatalogos\Otros\SubmenuTalla.resx">
+      <DependentUpon>SubmenuTalla.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\MenuCatalogos\SubmenuCliente.resx">
+      <DependentUpon>SubmenuCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\MenuCatalogos\SubmenuProducto.resx">
+      <DependentUpon>SubmenuProducto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\MenuCatalogos\SubmenuProveedor.resx">
+      <DependentUpon>SubmenuProveedor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\MenuCatalogos\SubmenuTrabajador.resx">
+      <DependentUpon>SubmenuTrabajador.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\MenuOperaciones\Otros\SubmenuEstadoEncargo.resx">
+      <DependentUpon>SubmenuEstadoEncargo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\MenuOperaciones\Otros\SubmenuProductos.resx">
+      <DependentUpon>SubmenuProductos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\MenuOperaciones\Otros\SubmenuTipoPago.resx">
+      <DependentUpon>SubmenuTipoPago.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\MenuOperaciones\SubmenuCompraProveedor.resx">
+      <DependentUpon>SubmenuCompraProveedor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\MenuOperaciones\SubmenuEncargoCliente.resx">
+      <DependentUpon>SubmenuEncargoCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\MenuOperaciones\SubmenuPedidoCliente.resx">
+      <DependentUpon>SubmenuPedidoCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\MenuReportes\Reportes.resx">
+      <DependentUpon>Reportes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\profile_round [#1342].png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\shut_down [#1431].png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\3d_modelling [#819].png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arrow_right_outside [#265].png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\home [#1391].png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\truck_round [#653].png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\profile [#1341].png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\truck_round [#653]1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\profile [#1341]1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\airbnb [#179].png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\chart [#1293].png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\basketball [#791].png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\profile_image_round [#1326].png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\shop_center_round [#1140].png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\profile [#1336].png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\profile_round [#1342]1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\grid [#1525].png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\grid [#1525]1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\save_item [#1411].png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\delete [#1487].png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\search_right [#1505].png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\edit [#1483].png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\profile_plus_round [#1324].png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\profile [#1341]2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cart_up_round [#1172].png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cart_down_round [#1171].png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\list [#1540].png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\menu_list [#1527].png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Isologo.jpg" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
