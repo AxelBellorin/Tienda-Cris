@@ -65,13 +65,7 @@ namespace TRCAplicacion.GUI.MenuReportes
 
                 //Añadimos un label de la cantidad de stock en cada columna(punto).
                 chartProductoBajoStock.Series[0].Points[i].Label = dt.Rows[i][1].ToString();
-<<<<<<< HEAD
-                //Probando
-=======
-                //prueba
->>>>>>> 31582810cc3ff5a9de519c9758c1346b2243acd3
             }
-            //se borro
 
             //Se le agrega un color random para cada columna(punto).
             for (int i = 0; i < chartProductoBajoStock.Series[0].Points.Count; i++)
