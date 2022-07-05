@@ -67,6 +67,7 @@ namespace TRCAplicacion.GUI.MenuReportes
                 chartProductoBajoStock.Series[0].Points[i].Label = dt.Rows[i][1].ToString();
                 //Probando
             }
+            //se borro
 
             //Se le agrega un color random para cada columna(punto).
             for (int i = 0; i < chartProductoBajoStock.Series[0].Points.Count; i++)
